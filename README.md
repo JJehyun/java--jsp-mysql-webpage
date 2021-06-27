@@ -20,7 +20,8 @@ main창 댓글창
 <img width="948" alt="공지게시판" src="https://user-images.githubusercontent.com/86187456/123537562-04fb9080-d76b-11eb-88c8-13428ca5b66f.png">
 
 공지게시판 상세페이지
-<img width="948" alt="공지게시판" src="https://user-images.githubusercontent.com/86187456/123537569-0e84f880-d76b-11eb-9085-9f6704c2e067.png">
+<img width="947" alt="공지게시판 상세페이지" src="https://user-images.githubusercontent.com/86187456/123537749-f95c9980-d76b-11eb-8535-4792280ec0e9.png">
+
 
 회원정보 변경
 <img width="961" alt="회원정보 변경" src="https://user-images.githubusercontent.com/86187456/123537573-16449d00-d76b-11eb-873f-f267658d9a22.png">
