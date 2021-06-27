@@ -1,0 +1,74 @@
+body,html {background-color:white;color:white;font-family: 'Jua', sans-serif; height:100%; width:100%;}
+#header_main{border:0px solid #ededed; height:10%; display:flex;justify-content:space-around;}
+
+
+
+ #buttonA {
+    border: 4px solid red;
+    color: black;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 24px;
+    margin: auto;
+    padding: 12px 32px 12px 82px;
+    text-decoration: none;
+}
+
+#buttonA .label,
+#buttonA .icon-arrow {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    perspective: 1000;
+}
+
+#buttonA .label {
+    display: inline-block;
+    transition: transform .5s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+#buttonA .icon-arrow {
+    fill: #3F3F3F;
+    height: 15px;
+    top: 17px;
+    transition: transform .5s cubic-bezier(0.86, 0, 0.07, 1), opacity .4s cubic-bezier(0.86, 0, 0.07, 1);
+    width: 35px;
+}
+
+#buttonA .icon-arrow.before {
+    left: 32px;
+    margin-right: 15px;
+    position: absolute;
+    transform-origin: left center;
+}
+
+#buttonA .icon-arrow.after {
+    margin-left: 15px;
+    opacity: 0;
+    position: absolute;
+    right: 32px;
+    transform: translateX(75%) scaleX(0.1);
+    transform-origin: right center;
+}
+
+#buttonA:hover .label {
+    transform: translateX(-52px);
+}
+
+#buttonA:hover .icon-arrow.before {
+    opacity: 0;
+    transform: translateX(-75%) scaleX(0.1);
+}
+
+#buttonA:hover .icon-arrow.after {
+    opacity: 1;
+    transform: translateX(0) scaleX(1);
+}
+
+#buttonA:active {
+    border-color: #FD6154;
+    color: #FD6154;
+}
+
+#buttonA:active .icon-arrow {
+    fill: #FD6154;
+}
