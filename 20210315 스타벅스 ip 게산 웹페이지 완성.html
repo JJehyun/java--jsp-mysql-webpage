@@ -1,0 +1,717 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
+</head>
+
+
+<style>
+html, body{height:100%; background-color:#1D1F20; color:white;font-size: 20px}
+
+a { text-decoration:none !important }
+#header{display: flex; justify-content:space-between;}
+
+ul{list-style:none; display: flex;justify-content:space-between; width: 620px;height:20px;}
+#head_left, #head_right{display:flex;align-items:center;}
+svg{cursor: pointer;}
+*{font-family: 'Coda Caption', sans-serif;}
+
+
+input{border-top: none;
+    border-left:none;
+    border-right:none;
+    border-color: #eaab00;
+    background-color:#1D1F20;
+    color:#eaab00;
+    caret-color: greenyellow;}
+
+    input:focus {
+    outline: none !important;
+    border-radius: 4px;
+    border:5px solid rgb(21, 255, 0);
+    box-shadow: 0 0 20px #719ECE;
+}
+
+
+
+:root {
+--shadow-color: #FF9E9E;
+--shadow-color-light: white;
+}
+li {
+font-size: 25px;
+text-transform: uppercase;
+font-weight: normal;
+color: white;
+animation: neon 5s infinite;
+}
+
+@keyframes neon {
+0% {
+text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
+0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
+}
+50% {
+text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+0 0 5px var(--shadow-color-light), 0 0 15px var(--shadow-color-light), 0 0 25px var(--shadow-color-light),
+0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 60px var(--shadow-color), 0 0 80px var(--shadow-color), 0 0 110px var(--shadow-color), 0 0 210px var(--shadow-color);
+}
+100% {
+text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
+0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
+}
+}
+
+
+
+
+textarea{
+  color:#eaab00;
+  /* box-sizing: padding-box; */
+  overflow:hidden;
+  /* demo only: */
+  padding:10px;
+  width:100%;
+  font-size:25px;
+  margin:50px auto;
+  display:block;
+  border-radius:10px;
+  border:6px solid #556677;
+  height:40%;
+  background-color: #1D1F20;
+}
+
+
+
+
+
+/*middle*/
+
+#middle{border:3px solid #eaab00; display:flex; height:80%; color:#eaab00;}
+#middle_left{width:20%; display: flex; flex-direction: column;align-items: center;}
+#weather_sky_control{display:flex;justify-content: center;width:100%;}
+#weather_sky_control span{flex: 0.1 0.1 auto;}
+
+
+
+
+
+
+
+
+
+#middle_center{flex-grow: 4;display: flex; flex-direction: column;}
+#middle_center_top{display: flex;align-items: center;justify-content: center;color: white;}
+
+
+
+.gradient-border {
+--borderWidth: 3px;
+background: #1D1F20;
+position: relative;
+border-radius: var(--borderWidth);
+}
+
+
+.gradient-border:after {
+content: '';
+position: absolute;
+top: calc(-1 * var(--borderWidth));
+left: calc(-1 * var(--borderWidth));
+height: calc(100% + var(--borderWidth) * 2);
+width: calc(100% + var(--borderWidth) * 2);
+background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+border-radius: calc(2 * var(--borderWidth));
+z-index: -1;
+animation: animatedgradient 3s ease alternate infinite;
+background-size: 300% 300%;
+}
+
+
+@keyframes animatedgradient {
+0% {
+background-position: 0% 50%;
+}
+50% {
+background-position: 100% 50%;
+}
+100% {
+background-position: 0% 50%;
+}
+}
+
+
+
+
+
+#middle_center_bottom{flex-grow: 5;display:flex;align-items: center; justify-content: center; flex-direction: column;}
+
+#middle_center_control{display:flex; flex: 0.01 0.01 auto; justify-content: center;width:100%;}
+#middle_center_control span{flex: 0.01 0.01 auto;}
+
+
+#middle_center_bottom_dt{flex-grow: 5;display:flex;align-items: center; justify-content: center; flex-direction: column;}
+
+
+
+
+
+#middle_right{width:20%; display: flex;flex-direction: column;}
+#middle_right_box{height:20%;}
+
+</style>
+
+
+<div id="header" class="gradient-border">
+    <div id="head_left">
+        <a href="https://www.starbucks.co.kr">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mug" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00b341" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 12px;">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4.083 5h10.834a1.08 1.08 0 0 1 1.083 1.077v8.615c0 2.38 -1.94 4.308 -4.333 4.308h-4.334c-2.393 0 -4.333 -1.929 -4.333 -4.308v-8.615a1.08 1.08 0 0 1 1.083 -1.077" />
+                <path d="M16 8h2.5c1.38 0 2.5 1.045 2.5 2.333v2.334c0 1.288 -1.12 2.333 -2.5 2.333h-2.5" />
+            </svg>
+        </a>
+    </div>
+
+
+
+    <div id="head_middle" >
+        <ul>
+            <a href="cafe.html" id="list_one"><li>cafe address</li></a>
+            <a href="dt.html" id="list_two"><li>DT address</li></a>
+            <a href="Calendar.html" id="list_three"><li>Calendar</li></a>
+        </ul>
+    </div>
+
+
+    <div id="head_right">
+        <div id="icons" style="margin-right: 12px;">
+            <a class="a_one" href="https://www.facebook.com">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00b341" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+                </svg>
+            </a>
+            <a href="https://instagram.com">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00b341" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <rect x="4" y="4" width="16" height="16" rx="4" />
+                    <circle cx="12" cy="12" r="3" />
+                    <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+                </svg>
+            </a>
+            <a href="https://google.com">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-google" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00b341" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="middle">
+
+
+
+
+    <div id="middle_left">
+      <span id="today"> NOW seoul weather</span>
+      <div id="weather_sky_control">
+            <span>sky state:  </span><span id="weather_sky" style="color:skyblue"></span>
+      </div>
+      <div id="weather_sky_control">
+            <span>temperature:</span><span id="temperature" style="color:skyblue"></span>
+      </div>
+      <div id="weather_sky_control">
+            <span>weather:</span><span id="weather" style="color:skyblue"></span>
+      </div>
+    </div>
+
+
+    <div id="middle_center">
+
+        <div id="middle_center_top" style="display: none;">
+            <input type="text" id="ip_one" maxlength="2" size="1px" style="height:50px; width:50px" class="onlythree" />.
+            <input type="text" id="ip_two" maxlength="2" size="1px" style="height:50px; width:50px" class="onlythree" />.
+            <input type="text" id="ip_three" maxlength="3" size="1px" style="height:50px; width:50px" class="onlythree" />.
+            <input type="text" id="ip_four" maxlength="3" size="1px" style="height:50px; width:50px" class="onlythree" />
+        </div>
+        <div id="middle_center_bottom" style="display: none;">
+            <div id="middle_center_control">
+                <span>cafe </span>
+            </div>
+            <div id="middle_center_control">
+                <span>gateway ip:</span><span id="gateway_one"></span><span id="gateway_two"></span><span id="gateway_three"></span><span id="gateway_four"></span>
+            </div>
+            <div id="middle_center_control">
+                <span> p-lte ip:</span><span id="lte_one"></span><span id="lte_two"></span><span id="lte_three"></span><span id="lte_four"></span>
+            </div>
+            <div id="middle_center_control">
+                <span>01 pos ip:</span><span id="pos_one"></span><span id="pos_two"></span><span id="pos_three"></span><span id="pos_four"></span>
+            </div>
+            <div id="middle_center_control">
+                <span>02 pos ip:</span><span id="poss_one"></span><span id="poss_two"></span><span id="poss_three"></span><span id="poss_four"></span>
+            </div>
+            <div id="middle_center_control">
+                <span>01 pri ip:</span><span id="pri_one"></span><span id="pri_two"></span><span id="pri_three"></span><span id="pri_four"></span>
+            </div>
+            <div id="middle_center_control">
+                <span>02 pri ip:</span><span id="ppri_one"></span><span id="ppri_two"></span><span id="ppri_three"></span><span id="ppri_four"></span>
+            </div>
+            <div id="middle_center_control">
+                <span>81 bds ip:</span><span id="bds_one"></span><span id="bds_two"></span><span id="bds_three"></span><span id="bds_four"></span>
+            </div>
+            <div id="middle_center_control">
+                <span>cafe cnd ip:</span><span id="cnd_one"></span><span id="cnd_two"></span><span id="cnd_three"></span><span id="cnd_four"></span>
+            </div>
+        </div>
+        <div id="middle_center_bottom_dt" style="display: none">
+            <div id="middle_center_control">
+                <span>dt </span>
+            </div>
+            <div id="middle_center_control">
+                <span>gateway ip:</span><span id="dt_gateway_one"></span><span id="dt_gateway_two"></span><span id="dt_gateway_three"></span><span id="dt_gateway_four"></span>
+            </div>
+            <div id="middle_center_control">
+                <span> p-lte ip:</span><span id="dt_lte_one"></span><span id="dt_lte_two"></span><span id="dt_lte_three"></span><span id="dt_lte_four"></span>
+            </div>
+            <div id="middle_center_control">
+                <span>01 pos ip:</span><span id="dt_pos_one"></span><span id="dt_pos_two"></span><span id="dt_pos_three"></span><span id="dt_pos_four"></span>
+            </div>
+            <div id="middle_center_control">
+                <span>02 pos ip:</span><span id="dt_poss_one"></span><span id="dt_poss_two"></span><span id="dt_poss_three"></span><span id="dt_poss_four"></span>
+            </div>
+            <div id="middle_center_control">
+                <span>03 pos ip:</span><span id="dt_posss_one"></span><span id="dt_posss_two"></span><span id="dt_posss_three"></span><span id="dt_posss_four"></span>
+            </div>
+            <div id="middle_center_control">
+                <span>04 pos ip:</span><span id="dt_possss_one"></span><span id="dt_possss_two"></span><span id="dt_possss_three"></span><span id="dt_possss_four"></span>
+            </div>
+            <div id="middle_center_control">
+                <span>01 pri ip:</span><span id="dt_pri_one"></span><span id="dt_pri_two"></span><span id="dt_pri_three"></span><span id="dt_pri_four"></span>
+            </div>
+            <div id="middle_center_control">
+                <span>02 pri ip:</span><span id="dt_ppri_one"></span><span id="dt_ppri_two"></span><span id="dt_ppri_three"></span><span id="dt_ppri_four"></span>
+            </div>
+            <div id="middle_center_control">
+                <span>81 bds ip:</span><span id="dt_bds_one"></span><span id="dt_bds_two"></span><span id="dt_bds_three"></span><span id="dt_bds_four"></span>
+            </div>
+            <div id="middle_center_control">
+                <span>82 bds ip:</span><span id="dt_bbds_one"></span><span id="dt_bbds_two"></span><span id="dt_bbds_three"></span><span id="dt_bbds_four"></span>
+            </div>
+            <div id="middle_center_control">
+                <span>cafe cnd ip:</span><span id="dt_cnd_one"></span><span id="dt_cnd_two"></span><span id="dt_cnd_three"></span><span id="dt_cnd_four"></span>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <div id="middle_right">
+      <textarea rows='3' placeholder=memo></textarea>
+      <textarea rows='3' placeholder=memo></textarea>
+    </div>
+
+</div>
+
+
+
+<script>
+$(document).ready(function(){
+    $(document).on('click', '#list_one', function(event){
+        event.preventDefault();
+    })
+});
+
+$(document).ready(function(){
+    $(document).on('click', '#list_two', function(event){
+        event.preventDefault();
+    })
+});
+
+$(document).ready(function(){
+    $(document).on('click', '#list_three', function(event){
+        event.preventDefault();
+    })
+});
+
+
+$(document).ready(function(){
+
+$("#list_one").click(function(){
+$("#middle_center_top").slideToggle("slow");
+$('#middle_center_bottom').toggle();
+$('#middle_center_bottom_dt').hide();
+})
+});
+
+$(document).ready(function(){
+
+$("#list_two").click(function(){
+$("#middle_center_top").slideToggle("slow");
+$('#middle_center_bottom_dt').toggle();
+$('#middle_center_bottom').hide();
+})
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(".onlythree").keyup(function () {
+
+if (this.value.length == this.maxLength) {
+
+$(this).next('.onlythree').focus();
+
+}
+
+});
+
+
+
+
+//gateway
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+gateway_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+gateway_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+gateway_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+gateway_four.innerHTML = parseInt(event.target.value)-6});
+
+//p-lte
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+lte_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+lte_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+lte_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+lte_four.innerHTML = parseInt(event.target.value)-5});
+
+//01 pos
+
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+pos_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+pos_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+pos_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+pos_four.innerHTML = parseInt(event.target.value)-4});
+
+
+//02pos
+
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+poss_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+poss_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+poss_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+poss_four.innerHTML = parseInt(event.target.value)-3});
+
+//01pri
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+pri_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+pri_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+pri_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+pri_four.innerHTML = parseInt(event.target.value)+2});
+
+//02pri
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+ppri_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+ppri_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+ppri_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+ppri_four.innerHTML = parseInt(event.target.value)+3});
+
+//bds
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+bds_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+bds_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+bds_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+bds_four.innerHTML = parseInt(event.target.value)-1});
+
+
+//cnd
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+cnd_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+cnd_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+cnd_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+cnd_four.innerHTML = parseInt(event.target.value)+7});
+
+
+
+
+
+
+
+
+
+
+
+
+
+//gateway_dt
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+dt_gateway_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+dt_gateway_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+dt_gateway_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+dt_gateway_four.innerHTML = parseInt(event.target.value)-13});
+
+//p-lte_dt
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+dt_lte_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+dt_lte_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+dt_lte_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+dt_lte_four.innerHTML = parseInt(event.target.value)-12});
+
+//pos 01 dt
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+dt_pos_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+dt_pos_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+dt_pos_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+dt_pos_four.innerHTML = parseInt(event.target.value)-11});
+
+//02pos dt
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+dt_poss_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+dt_poss_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+dt_poss_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+dt_poss_four.innerHTML = parseInt(event.target.value)-10});
+
+//03pos dt
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+dt_posss_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+dt_posss_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+dt_posss_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+dt_posss_four.innerHTML = parseInt(event.target.value)-8});
+
+//04pos dt
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+dt_possss_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+dt_possss_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+dt_possss_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+dt_possss_four.innerHTML = parseInt(event.target.value)-7});
+
+//01pri dt
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+dt_pri_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+dt_pri_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+dt_pri_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+dt_pri_four.innerHTML = parseInt(event.target.value)+2});
+
+//02pri td
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+dt_ppri_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+dt_ppri_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+dt_ppri_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+dt_ppri_four.innerHTML = parseInt(event.target.value)+3});
+//bds81
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+dt_bds_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+dt_bds_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+dt_bds_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+dt_bds_four.innerHTML = parseInt(event.target.value)-9});
+
+//bds 82 bt
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+dt_bbds_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+dt_bbds_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+dt_bbds_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+dt_bbds_four.innerHTML = parseInt(event.target.value)-6});
+//cnd
+document.getElementById('ip_one').addEventListener('keyup', function (event) {
+dt_cnd_one.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_two').addEventListener('keyup', function (event) {
+dt_cnd_two.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_three').addEventListener('keyup', function (event) {
+dt_cnd_three.innerHTML = parseInt(event.target.value)});
+
+document.getElementById('ip_four').addEventListener('keyup', function (event) {
+dt_cnd_four.innerHTML = parseInt(event.target.value)+16});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$.ajax({
+  method: "GET",
+  url: 'http://api.openweathermap.org/data/2.5/weather?q=seoul&APPID=559273a85b0cf9d33d29d20175c4e9d6'
+})
+  .done(function( msg ) {
+    console.log(msg)
+    console.log(msg.weather.icon)
+    let weather_sky = document.getElementById("weather_sky")
+    weather_sky.innerHTML = msg.weather[0].description;
+
+    let temperature = document.getElementById("temperature")
+    temperature.innerHTML = parseInt(msg.main.temp)-273+"'c";
+
+    let weather = document.getElementById("weather")
+    weather.innerHTML = msg.weather[0].main;
+
+
+
+    let newdate = new Date();
+    let today = document.getElementById("today")
+    today.innerHTML = parseInt(newdate.getMonth())+1+"월"+newdate.getDate()+"일";
+});
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
